@@ -20,26 +20,30 @@ int main() {
 
 	while(1) {
 		mousetrack_results = fopen("mtr.txt", "a");
-		int clickStatus = 0; //0 = not clicked, 1 = left click, 2 = middle click, 3 = right click
 		//printf("running\n");
 		if (GetCursorPos(&p)) {
+			//int clickStatus = 0; //0 = not clicked, 1 = left click, 2 = middle click, 3 = right click
 			ftime(&stop);
 		/*	time = (int)(1000.0 * (stop.time - start.time)
 				+ (stop.millitm - start.millitm));*/
 			/*printf("Time elapsed: %ld\n", time);
 			printf("P.x = %d ", p.x);
 			printf("P.y = %d\n", p.y);*/
-			if ((GetKeyState(MK_LBUTTON))) {
-				clickStatus = 1;
+
+			/*
+			if (MK_LBUTTON) { //MK_LBUTTON
+				printf("wow! it claims to have left clicked! how nice of it\n");
 			}
-			else if ((GetKeyState(MK_MBUTTON))) {
-				clickStatus = 2;
+			else if (MK_MBUTTON) {
+				printf("wow! it claims to have middle clicked! how nice of it\n");
 			}
-			else if ((GetKeyState(MK_RBUTTON))) {
-				clickStatus = 3;
+			else if (MK_RBUTTON) {
+				printf("wow! it claims to have right clicked! how nice of it\n");
 			}
-			fprintf(mousetrack_results, "%d,%d,%d,%d\n", (int)(1000.0 * (stop.time - start.time)
-				+ (stop.millitm - start.millitm)), p.x, p.y, clickStatus);
+			*/
+
+			fprintf(mousetrack_results, "%d,%d,%d\n", (int)(1000.0 * (stop.time - start.time)
+				+ (stop.millitm - start.millitm)), p.x, p.y);
 			/*fprintf(mousetrack_results, "%d,", time);
 			fprintf(mousetrack_results, "%d,", p.x);
 			fprintf(mousetrack_results, "%d\n", p.y);*/
