@@ -32,13 +32,13 @@ int main() {
 
 			/*
 			if (MK_LBUTTON) { //MK_LBUTTON
-				printf("wow! it claims to have left clicked! how nice of it\n");
+				printf("");
 			}
 			else if (MK_MBUTTON) {
-				printf("wow! it claims to have middle clicked! how nice of it\n");
+				printf("");
 			}
 			else if (MK_RBUTTON) {
-				printf("wow! it claims to have right clicked! how nice of it\n");
+				printf("");
 			}
 			*/
 
