@@ -295,17 +295,6 @@
 			//xx++;
 			//yy++;
 		}
-		
-		
-
-		//how to figure out the speed?
-		/*
-			TODO:
-			0. Get a random number using C
-			1. How can we use speed to determine how frequently the mouse should move?
-				Do we need to measure loop time somehow?
-			2. How can we implement stops every so often? How should the RNG work?
-		*/
 
 	}
 	
@@ -314,7 +303,7 @@
 		return r;
 	}
 
-	//returns 1 if point has been reached ||||| SHOULD WORK BUT DOES NOT YET HAVE NOISE
+	//returns 1 if point has been reached
 	int cursorMove(float avgSpeed, float stdDevSpeed, float avgStopTime, int numStops, int goalX, int goalY) {
 		printf("avgSpeed: %f, stdDevSpeed: %f, avgStopTime: %f, numStops: %d\n", avgSpeed, stdDevSpeed, avgStopTime, numStops);
 		float sp = avgSpeed - stdDevSpeed;
