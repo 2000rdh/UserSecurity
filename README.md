@@ -32,6 +32,12 @@ findimg.py: Currently, findimg.py has nearly all of its functionality except for
 
 3. Instructions/How It Works
 
+I have included Sim.exe and Track.exe. Track.exe will track your mouse coordinates and time elapsed (NO ADDITIONAL INFO IS TAKEN AND IT IS NOT SENT ANYWHERE EXTERNAL) and produce a file mtr.txt in the same folder containing the data. Sim.exe will hijack the cursor, but has a time limit of 5 SECONDS, and will release the mouse at this point. Currently, it gives the mouse a destination coordinate of 640, 360.
+
+RUN TRACK.EXE BEFORE SIM.EXE, AS MTR.TXT IS REQUIRED FOR SIM.EXE TO WORK PROPERLY.
+
+The following instructions are for running the code. Recommended to open the solution in Visual Studio 2019.
+
 NOTE: The source code is allowed to be altered as needed, especially Sim.c.
 
 The C code can be compiled and run as an executable, and the python can be run in an IDE or through the command line. The C was developed in Visual Studio 2019, and though C++-adjacent tools were used, these parts are written entirely in C. The Python is written in Python 3.
@@ -40,4 +46,8 @@ Once Track.c starts running, it will track time elapsed and mouse coordinates (a
 
 When Sim.c is run, it will attempt to read from mtr.txt and proceed if it is found. Then it will analyze the data by sorting it into vectors and pulling the relevant vector data to be parameterized. After the analysis, the simulator is put into action. In the current implementation, there are two notable parts that may need to be altered within the program. The first is the destination coordinate, which is hard coded in, as the simulator only presently undergoes one iteration. As of right now it goes to the coordinate that would be the center of the screen on a 1280 x 720 resolution computer. The second is the time limit on the program. In order to prevent the program from potentially indefinitely hijacking the cursor, the loop that runs the simulator is timed. The unit is in seconds, and in the line /if((stop.time - start.time) >= 5) {/, the number 5 represents a time limit of 5 seconds on the loop.
 
-When findimg.py is run, it goes through the algorithm and will display each image containing a rectangle enclosing the found destination image and a dot indicating where the C program would be told to click. The bigger image is often labeled as the "received" variable, and the image being searched for is the "template" image. These can be changed for testing purposes.
+Running findimg.py requires installation of opencv, numpy, and matplotlib. It also should be run from a directory containing the images included in the Images folder.
+
+When findimg.py is run, it goes through the algorithm and will display each image containing a rectangle enclosing the found destination image and a dot indicating where the C program would be told to click. The bigger image is often labeled as the "received" variable, and the image being searched for is the "template" image. These can be changed for testing purposes. Normally, the received image would be received dynamically, but for testing purposes it is hardcoded in.
+
+I WILL BE UPLOADING AN EXECUTABLE OF THE PYTHON AS SOON AS POSSIBLE. When run in its intended implementation, it would be in a fully prepared environment, so there is no need for a .exe, however for testing purposes I am working on creating one.
